@@ -1,6 +1,5 @@
 import React from 'react';
-import Todo from './components/TodoComponents/Todo.js';
-import TodoForm from './components/TodoComponents/Todo.js'
+import TodoForm from './components/TodoComponents/TodoForm.js'
 import TodoList from './components/TodoComponents/TodoList.js'
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -9,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: []
+      todos: ['']
     }
   }
   render() {
@@ -19,7 +18,7 @@ class App extends React.Component {
           <h2>Welcome to your Todo App!</h2>
           <TodoForm />
         </div>
-        <TodoList todos={this.state.todo}/>
+        <TodoList todos={this.state.todos}/>
       </div>
     );
   }
