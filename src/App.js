@@ -8,15 +8,28 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: ['']
+      todos: []
     }
   }
+  addTodo = (todoName) => {
+    this.setState({
+      todos: [
+        ...this.state.todos, 
+        {
+          name: todoName,
+          id: new Date(),
+          completed: false
+        }
+      ]
+    });
+  };
+
   render() {
     return (
       <div>
         <div>
           <h2>Welcome to your Todo App!</h2>
-          <TodoForm />
+          <TodoForm  addTodo = {this.addTodo}/>
         </div>
         <TodoList todos={this.state.todos}/>
       </div>
