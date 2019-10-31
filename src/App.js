@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: ''
+      todos: []
     }
   }
   render() {
@@ -19,7 +19,7 @@ class App extends React.Component {
           <h2>Welcome to your Todo App!</h2>
           <TodoForm />
         </div>
-        <TodoList todo={this.state.todo/>
+        <TodoList todos={this.state.todo}/>
       </div>
     );
   }
