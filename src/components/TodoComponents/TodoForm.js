@@ -29,10 +29,12 @@ class TodoForm extends React.Component {
                     type="text"
                     name="todo"
                     value={this.state.todoName}
-                />
-                <button>Add Todo</button>
+                />     
             </form>
-                <button onClick={this.props.clearCompleted}>Clear Completed</button>
+                <div >
+                    <button className="buttons" onClick={this.submit}>Add Todo</button>
+                    <button className="buttons" onClick={this.props.clearCompleted}>Clear Completed</button>
+                </div>
             </div>
         )
     }

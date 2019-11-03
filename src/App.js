@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoForm from './components/TodoComponents/TodoForm.js'
+
 import TodoList from './components/TodoComponents/TodoList.js'
 import './App.css';
 
@@ -51,9 +51,9 @@ class App extends React.Component {
       <div>
         <div>
           <h2>Welcome to your Todo App!</h2>
-          <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} />  
+          <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} addTodo = {this.addTodo} clearCompleted={this.clearCompleted}/>  
         </div>
-        <TodoForm  addTodo = {this.addTodo} clearCompleted={this.clearCompleted}/>
+        
       </div>
     );
   }

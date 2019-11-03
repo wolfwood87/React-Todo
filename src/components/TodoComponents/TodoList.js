@@ -2,6 +2,7 @@
 // feel free to change this component.js into TodoList.js
 import React from 'react';
 import Todo from './Todo.js';
+import TodoForm from '../../components/TodoComponents/TodoForm.js';
 
 const TodoList = props => {
     return (
@@ -12,8 +13,10 @@ const TodoList = props => {
                     todo={item}
                     toggleTodo={props.toggleTodo}
                 />
+                
+                
             ))}
-            
+            <TodoForm  addTodo = {props.addTodo} clearCompleted={props.clearCompleted}/>
         </div>
     )
 }
