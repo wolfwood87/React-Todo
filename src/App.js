@@ -1,6 +1,5 @@
 import React from 'react';
-
-import TodoList from './components/TodoComponents/TodoList.js'
+import CardList from './components/TodoComponents/CardList'
 import './App.css';
 
 class App extends React.Component {
@@ -10,50 +9,28 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: []
+      cards: [1],
+      
     }
   }
 
-  toggleTodo = todoName => {
+  
+  addCard = (e) => {
+    e.preventDefault();
     this.setState({
-      todos: this.state.todos.map(todoItem => {
-        if (todoItem.id === todoName) {
-          return{
-            ...todoItem,
-            completed: !todoItem.completed
-          }
-        }
-        return todoItem;
-        })
-      });
+      cards: [...this.state.cards, this.state.cards + 1]
+    })
   }
-  addTodo = (todoName) => {
-    this.setState({
-      todos: [
-        ...this.state.todos, 
-        {
-          name: todoName,
-          id: new Date(),
-          completed: false
-        }
-      ]
-    });
-  };
-  clearCompleted = () => {
-    this.setState({
-      todos: this.state.todos.filter(todoItem => {
-        return !todoItem.completed;
-      })
-    });
-  };
+
+  
   render() {
     return (
       <div>
         <div>
-          <h2>Welcome to your Todo App!</h2>
-          <TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} addTodo = {this.addTodo} clearCompleted={this.clearCompleted}/>  
+          <h2 className="title">Welcome to your Todo App!</h2>
+          <CardList addCard={this.addCard}cards={this.state.cards}/>
         </div>
-        
+          
       </div>
     );
   }
