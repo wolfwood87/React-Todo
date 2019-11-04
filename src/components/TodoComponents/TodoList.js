@@ -48,17 +48,18 @@ class TodoList extends React.Component {
     return (
         <div className="todo-card">
             <h3>Note</h3>
-            
-            {this.state.todos.map((item, index) => (
-                <Todo
-                    key={index}
-                    todo={item}
-                    toggleTodo={this.toggleTodo}
-                />
+            <div className="list-cont">
+                {this.state.todos.map((item, index) => (
+                    <Todo
+                        key={index}
+                        todo={item}
+                        toggleTodo={this.toggleTodo}
+                    />
                 
                 
-            ))}
+                ))}
             <TodoForm  addTodo = {this.addTodo} clearCompleted={this.clearCompleted}/>
+            </div>
         </div>
     )
 }

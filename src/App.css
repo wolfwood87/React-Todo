@@ -33,3 +33,13 @@
     margin-left: 33%;
     font-size: 2rem;
 }
+.todo-item {
+
+}
+.list-cont {
+    width: 95%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
