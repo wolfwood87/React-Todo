@@ -25,7 +25,7 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="background">
         <div>
           <h2 className="title">Welcome to your Todo App!</h2>
           <CardList addCard={this.addCard}cards={this.state.cards}/>
